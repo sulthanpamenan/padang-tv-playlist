@@ -18,6 +18,52 @@ Use either of the links below to import into your IPTV player (TiviMate, OTT Nav
 
 ## 📺 Channel Metadata
 
-```text
-#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="[https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png](https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png)" group-title="Local",Padang TV
+#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png" group-title="Local",Padang TV
 
+---
+
+## ⚡ Key Features
+
+* **Automated Token Refresh**: Runs every **3 hours** via GitHub Actions to capture fresh Usher HLS tokens before they expire.
+* **Fully Standardized**: Compatible with all M3U-supported IPTV players.
+* **VPN Free**: Streamable directly from local and international networks.
+
+---
+
+## ☕ Support the Developer
+
+If the **padang-tv-playlist** project is helpful to you, consider supporting the developer to keep this project alive and maintained!
+
+<div align="center">
+
+### 🇮🇩 Local Donation (QRIS / E-Wallet / Mobile Banking)
+
+<a href="https://saweria.co/sulthanpamenan" target="_blank">
+  <img width="290" height="290" alt="Saweria QRIS" src="https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0" />
+</a>
+
+<br>
+
+*Scan the QRIS code above using GoPay, DANA, OVO, ShopeePay, LinkAja, or Mobile Banking.*
+
+<br>
+
+<a href="https://saweria.co/sulthanpamenan" target="_blank">
+  <img src="https://img.shields.io/badge/Saweria-Support_Project-orange?style=for-the-badge&logo=coffee" alt="Support via Saweria">
+</a>
+
+---
+
+### 🌐 International Donation
+
+<a href="https://buymeacoffee.com/sulthanpamenan" target="_blank">
+  <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
+</a>
+
+</div>
+
+---
+
+## ⚠️ Disclaimer
+
+This project is created for educational automation purposes only. All video streams belong to their respective copyright holders at Padang TV.
