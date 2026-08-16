@@ -9,10 +9,10 @@ This repository automatically scrapes, parses, and refreshes dynamic HLS stream 
 Use either of the links below to import into your IPTV player (TiviMate, OTT Navigator, VLC, etc.):
 
 * **M3U Playlist (GitHub Pages)**:
-  `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.m3u`
+  `https://sulthanpamenan.github.io/padang-tv/playlist.m3u`
 
 * **Plain Text Playlist**:
-  `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.txt`
+  `https://sulthanpamenan.github.io/padang-tv/playlist.txt`
 
 ---
 
