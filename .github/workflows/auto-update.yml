@@ -1,0 +1,36 @@
+name: Auto Refresh Padang TV Stream
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' # Berjalan otomatis setiap 3 jam sekali
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install chromium
+
+      - name: Run Scraper Script
+        run: python generate.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u playlist.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto refresh Padang TV stream token [skip ci]" && git pull --rebase && git push)
