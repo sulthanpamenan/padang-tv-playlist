@@ -16,12 +16,6 @@ Use either of the links below to import into your IPTV player (TiviMate, OTT Nav
 
 ---
 
-## 📺 Channel Metadata
-
-#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png" group-title="Local",Padang TV
-
----
-
 ## ⚡ Key Features
 
 * **Automated Token Refresh**: Runs every **3 hours** via GitHub Actions to capture fresh Usher HLS tokens before they expire.
