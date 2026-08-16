@@ -3,7 +3,7 @@ import os
 from playwright.sync_api import sync_playwright
 
 TARGET_URL = "https://padangtv.id/livestreaming/"
-SCHEDULE_URL = "https://padangtv.id/schedule/"
+EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png"
 
 def run_scraper():
@@ -61,10 +61,10 @@ def main():
 
     print(f"[✓] Stream M3U8 Berhasil Ditemukan!")
 
-    # Format header & #EXTINF yang disesuaikan dengan EPG / Schedule URL
+    # Format header EXTM3U dengan url-tvg menuju EPG GitHub Pages
     m3u_content = (
-        "#EXTM3U\n"
-        f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" tvg-url="{SCHEDULE_URL}" group-title="Local",Padang TV\n'
+        f'#EXTM3U url-tvg="{EPG_URL}"\n\n'
+        f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV\n'
         f"{stream_url}\n"
     )
 
