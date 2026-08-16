@@ -3,6 +3,7 @@ import os
 from playwright.sync_api import sync_playwright
 
 TARGET_URL = "https://padangtv.id/livestreaming/"
+SCHEDULE_URL = "https://padangtv.id/schedule/"
 LOGO_URL = "https://raw.githubusercontent.com/sulthanpamenan/IPTV/main/Logos/Local/Padang%20TV.png"
 
 def run_scraper():
@@ -20,7 +21,6 @@ def run_scraper():
         def handle_request(request):
             nonlocal stream_url
             req_url = request.url
-            # Intercept URL Twitch Usher HLS / playlist m3u8
             if ".m3u8" in req_url and ("ttvnw.net" in req_url or "twitch" in req_url):
                 if not stream_url:
                     stream_url = req_url
@@ -32,7 +32,6 @@ def run_scraper():
             page.goto(TARGET_URL, timeout=60000, wait_until="domcontentloaded")
             page.wait_for_timeout(4000)
 
-            # Klik player/iframe jika autoplay tertahan
             for frame in page.frames:
                 try:
                     play_btn = frame.locator("video, .play-button, iframe, #player")
@@ -62,10 +61,10 @@ def main():
 
     print(f"[✓] Stream M3U8 Berhasil Ditemukan!")
 
-    # Format header & baris #EXTINF sesuai permintaan
+    # Format header & #EXTINF yang disesuaikan dengan EPG / Schedule URL
     m3u_content = (
         "#EXTM3U\n"
-        f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV\n'
+        f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" tvg-url="{SCHEDULE_URL}" group-title="Local",Padang TV\n'
         f"{stream_url}\n"
     )
 
