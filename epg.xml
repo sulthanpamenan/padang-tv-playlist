@@ -3,51 +3,51 @@
   <channel id="PadangTV.id">
     <display-name>Padang TV</display-name>
   </channel>
-  <programme start="20260816050000 +0700" stop="20260816060000 +0700" channel="PadangTV.id">
+  <programme start="20260817050000 +0700" stop="20260817060000 +0700" channel="PadangTV.id">
     <title lang="id">Salingka Minang Morning</title>
     <desc lang="id">Siaran resmi Padang TV - Salingka Minang Morning</desc>
   </programme>
-  <programme start="20260816060000 +0700" stop="20260816073000 +0700" channel="PadangTV.id">
+  <programme start="20260817060000 +0700" stop="20260817073000 +0700" channel="PadangTV.id">
     <title lang="id">Detak Sumbar Pagi</title>
     <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Pagi</desc>
   </programme>
-  <programme start="20260816073000 +0700" stop="20260816090000 +0700" channel="PadangTV.id">
+  <programme start="20260817073000 +0700" stop="20260817090000 +0700" channel="PadangTV.id">
     <title lang="id">Lagu Minang Hits</title>
     <desc lang="id">Siaran resmi Padang TV - Lagu Minang Hits</desc>
   </programme>
-  <programme start="20260816090000 +0700" stop="20260816110000 +0700" channel="PadangTV.id">
+  <programme start="20260817090000 +0700" stop="20260817110000 +0700" channel="PadangTV.id">
     <title lang="id">Dapur Kita</title>
     <desc lang="id">Siaran resmi Padang TV - Dapur Kita</desc>
   </programme>
-  <programme start="20260816110000 +0700" stop="20260816120000 +0700" channel="PadangTV.id">
+  <programme start="20260817110000 +0700" stop="20260817120000 +0700" channel="PadangTV.id">
     <title lang="id">Info Publik</title>
     <desc lang="id">Siaran resmi Padang TV - Info Publik</desc>
   </programme>
-  <programme start="20260816120000 +0700" stop="20260816133000 +0700" channel="PadangTV.id">
+  <programme start="20260817120000 +0700" stop="20260817133000 +0700" channel="PadangTV.id">
     <title lang="id">Detak Sumbar Siang</title>
     <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Siang</desc>
   </programme>
-  <programme start="20260816133000 +0700" stop="20260816153000 +0700" channel="PadangTV.id">
+  <programme start="20260817133000 +0700" stop="20260817153000 +0700" channel="PadangTV.id">
     <title lang="id">Feature Daerah</title>
     <desc lang="id">Siaran resmi Padang TV - Feature Daerah</desc>
   </programme>
-  <programme start="20260816153000 +0700" stop="20260816170000 +0700" channel="PadangTV.id">
+  <programme start="20260817153000 +0700" stop="20260817170000 +0700" channel="PadangTV.id">
     <title lang="id">Salingka Minang Sore</title>
     <desc lang="id">Siaran resmi Padang TV - Salingka Minang Sore</desc>
   </programme>
-  <programme start="20260816170000 +0700" stop="20260816190000 +0700" channel="PadangTV.id">
+  <programme start="20260817170000 +0700" stop="20260817190000 +0700" channel="PadangTV.id">
     <title lang="id">Mimbar Agama</title>
     <desc lang="id">Siaran resmi Padang TV - Mimbar Agama</desc>
   </programme>
-  <programme start="20260816190000 +0700" stop="20260816203000 +0700" channel="PadangTV.id">
+  <programme start="20260817190000 +0700" stop="20260817203000 +0700" channel="PadangTV.id">
     <title lang="id">Detak Sumbar Utama</title>
     <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Utama</desc>
   </programme>
-  <programme start="20260816203000 +0700" stop="20260816220000 +0700" channel="PadangTV.id">
+  <programme start="20260817203000 +0700" stop="20260817220000 +0700" channel="PadangTV.id">
     <title lang="id">Talkshow Interaktif</title>
     <desc lang="id">Siaran resmi Padang TV - Talkshow Interaktif</desc>
   </programme>
-  <programme start="20260816220000 +0700" stop="20260817000000 +0700" channel="PadangTV.id">
+  <programme start="20260817220000 +0700" stop="20260818000000 +0700" channel="PadangTV.id">
     <title lang="id">Semaian Rohani / Sinema Malam</title>
     <desc lang="id">Siaran resmi Padang TV - Semaian Rohani / Sinema Malam</desc>
   </programme>
