@@ -1,6 +1,6 @@
 # 🎥 Padang TV IPTV Playlist Auto-Generator
 
-This repository automatically scrapes, parses, and refreshes dynamic HLS stream tokens for **Padang TV** directly from their official live streaming portal (`https://padangtv.id/livestreaming/`). The output is updated every 3 hours to guarantee active streaming without token expiration issues.
+This repository automatically scrapes, parses, and refreshes dynamic HLS stream tokens for **Padang TV** directly from their official live streaming portal (`https://padangtv.id/livestreaming/`). The output is updated every 1 hours to guarantee active streaming without token expiration issues.
 
 ---
 
@@ -18,7 +18,7 @@ Use either of the links below to import into your IPTV player (TiviMate, OTT Nav
 
 ## ⚡ Key Features
 
-* **Automated Token Refresh**: Runs every **3 hours** via GitHub Actions to capture fresh Usher HLS tokens before they expire.
+* **Automated Token Refresh**: Runs every **1 hours** via GitHub Actions to capture fresh Usher HLS tokens before they expire.
 * **Official Schedule Sync**: Metadata linked to Padang TV's official program schedule (`https://padangtv.id/schedule/`).
 * **Fully Standardized**: Compatible with all M3U-supported IPTV players.
 * **VPN Free**: Streamable directly from local and international networks.
