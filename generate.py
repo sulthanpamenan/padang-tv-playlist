@@ -21,9 +21,10 @@ def run_scraper():
         def handle_request(request):
             nonlocal stream_url
             req_url = request.url
-            if ".m3u8" in req_url and ("ttvnw.net" in req_url or "twitch" in req_url):
-                if not stream_url:
-                    stream_url = req_url
+            # PERBAIKAN: Tangkap semua URL .m3u8 tanpa membatasi domain Twitch/ttvnw
+            if ".m3u8" in req_url and not stream_url:
+                print(f"[✓] Stream m3u8 ditemukan: {req_url}")
+                stream_url = req_url
 
         page.on("request", handle_request)
 
@@ -32,6 +33,7 @@ def run_scraper():
             page.goto(TARGET_URL, timeout=60000, wait_until="domcontentloaded")
             page.wait_for_timeout(4000)
 
+            # Coba klik player jika memerlukan interaksi tombol play
             for frame in page.frames:
                 try:
                     play_btn = frame.locator("video, .play-button, iframe, #player")
@@ -68,11 +70,13 @@ def main():
         f"{stream_url}\n"
     )
 
-    for filename in ["playlist.m3u", "playlist.txt"]:
-        with open(filename, "w", encoding="utf-8", newline="\n") as f:
-            f.write(m3u_content)
+    with open("playlist.m3u", "w", encoding="utf-8") as f:
+        f.write(m3u_content)
 
-    print("[SUCCESS] Playlist Padang TV berhasil diperbarui!")
+    with open("playlist.txt", "w", encoding="utf-8") as f:
+        f.write(stream_url)
+
+    print("[SUCCESS] Berkas `playlist.m3u` dan `playlist.txt` berhasil diperbarui.")
 
 if __name__ == "__main__":
     main()
