@@ -23,7 +23,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install playwright beautifulsoup4
-          playwright install chromium
+          playwright install --with-deps chromium
 
       - name: Generate M3U Playlist
         run: python generate.py
