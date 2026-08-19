@@ -25,6 +25,12 @@ Use either of the links below to import into your IPTV player (TiviMate, OTT Nav
 
 ---
 
+## ⚠️ Disclaimer
+
+This project is created for educational automation purposes only. All video streams belong to their respective copyright holders at Padang TV.
+
+---
+
 ## ☕ Support the Developer
 
 If the **padang-tv-playlist** project is helpful to you, consider supporting the developer to keep this project alive and maintained!
@@ -56,9 +62,3 @@ If the **padang-tv-playlist** project is helpful to you, consider supporting the
 </a>
 
 </div>
-
----
-
-## ⚠️ Disclaimer
-
-This project is created for educational automation purposes only. All video streams belong to their respective copyright holders at Padang TV.
