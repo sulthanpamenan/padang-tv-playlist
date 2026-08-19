@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 
 TARGET_URL = "https://padangtv.id/livestreaming/"
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
-LOGO_URL = "https://padangtv.id/wp-content/uploads/2023/07/padangtv.png"
+LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
 
 def run_scraper():
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
