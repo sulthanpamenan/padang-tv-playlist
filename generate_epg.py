@@ -2,7 +2,7 @@ import sys
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from datetime import datetime, timedelta
-from playwright.sync_api import sync_playwright
+import requests
 from bs4 import BeautifulSoup
 
 SCHEDULE_URL = "https://padangtv.id/schedule/"
@@ -10,23 +10,17 @@ CHANNEL_ID = "PadangTV.id"
 CHANNEL_NAME = "Padang TV"
 
 def fetch_schedule_html():
-    ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-    html_content = ""
-    
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
-        context = browser.new_context(user_agent=ua)
-        page = context.new_page()
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+    }
+    try:
         print("[*] Membuka halaman jadwal Padang TV...")
-        try:
-            page.goto(SCHEDULE_URL, timeout=60000, wait_until="domcontentloaded")
-            page.wait_for_timeout(3000)
-            html_content = page.content()
-        except Exception as e:
-            print(f"[!] Error saat memuat halaman jadwal: {e}")
-        browser.close()
-        
-    return html_content
+        response = requests.get(SCHEDULE_URL, headers=headers, timeout=15)
+        if response.status_code == 200:
+            return response.text
+    except Exception as e:
+        print(f"[!] Error saat memuat halaman jadwal: {e}")
+    return ""
 
 def parse_schedule(html):
     if not html:
@@ -35,15 +29,10 @@ def parse_schedule(html):
     soup = BeautifulSoup(html, "html.parser")
     programs = []
     
-    # Mencari tabel/kontainer jadwal pada WordPress Padang TV
-    # Catatan: Elemen umum WordPress untuk tabel jadwal berupa <tr> atau item daftar
     items = soup.select("tr") or soup.select(".schedule-item") or soup.select(".elementor-icon-list-item")
-    
-    today_str = datetime.now().strftime("%Y-%m-%d")
 
     for item in items:
         text = item.get_text(separator=" ", strip=True)
-        # Mencari pola jam (misal 06:00 - Program A atau 06.00 Program B)
         parts = text.replace(".", ":").split()
         if not parts:
             continue
@@ -57,7 +46,6 @@ def parse_schedule(html):
                     "title": title
                 })
 
-    # Fallback jika scraping struktur tabel HTML tidak menemukan item
     if not programs:
         print("[!] Format jadwal HTML dinamis, menerapkan fallback jadwal harian...")
         programs = [
@@ -80,7 +68,6 @@ def parse_schedule(html):
 def build_xmltv(programs):
     tv = ET.Element("tv", generator_info_name="PadangTV-EPG-Generator")
     
-    # Elemen Channel
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
@@ -93,7 +80,6 @@ def build_xmltv(programs):
             time_struct = datetime.strptime(prog["time"], "%H:%M").time()
             start_dt = datetime.combine(today_date, time_struct)
             
-            # Tentukan waktu selesai berdasarkan jam mulai program berikutnya
             if i + 1 < len(programs):
                 next_time_struct = datetime.strptime(programs[i+1]["time"], "%H:%M").time()
                 stop_dt = datetime.combine(today_date, next_time_struct)
@@ -114,7 +100,6 @@ def build_xmltv(programs):
         except Exception as e:
             print(f"[!] Error memasukkan item program {prog}: {e}")
 
-    # Format XML agar rapi (Pretty Print)
     xml_str = minidom.parseString(ET.tostring(tv, encoding="utf-8")).toprettyxml(indent="  ")
     return xml_str
 
