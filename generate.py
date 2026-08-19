@@ -2,8 +2,6 @@ import sys
 
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
-
-# Tautan Master Stream HLS Twitch langsung tanpa token IP runner
 STREAM_URL = "https://usher.ttvnw.net/api/channel/hls/padang_tv.m3u8?client_id=kimne78kx3ncx6br8ac4x563ca126r&allow_source=true&allow_audio_only=true"
 
 def main():
@@ -17,7 +15,7 @@ def main():
         '<meta http-equiv="X-UA-Compatible" content="IE=edge">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         "<script language=\"javascript\">",
-        'window.location.replace("https://sulthanpamenan.github.io/pluto-playlist/");',
+        'window.location.replace("https://sulthanpamenan.github.io/padang-tv-playlist/");',
         "</script>",
         "</head></html>",
         "",
