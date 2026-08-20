@@ -1,10 +1,29 @@
 import sys
+import streamlink
 
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
-STREAM_URL = "https://m3u8.live/twitch/padang_tv.m3u8"
+TWITCH_CHANNEL_URL = "https://www.twitch.tv/padang_tv"
+
+def get_stream_url():
+    try:
+        print("[*] Extracting stream URL via Streamlink...")
+        streams = streamlink.streams(TWITCH_CHANNEL_URL)
+        if "best" in streams:
+            return streams["best"].url
+        elif "worst" in streams:
+            return streams["worst"].url
+    except Exception as e:
+        print(f"[!] Streamlink Exception: {e}")
+    return None
 
 def main():
+    stream_url = get_stream_url()
+
+    if not stream_url:
+        print("[X] Failed to fetch stream URL.")
+        sys.exit(1)
+
     ua_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 
     m3u_lines = [
@@ -26,7 +45,7 @@ def main():
         f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV',
         f'#EXTVLCOPT:http-user-agent={ua_header}',
         f'#EXTVLCOPT:http-referrer=https://player.twitch.tv/',
-        f"{STREAM_URL}"
+        f"{stream_url}"
     ]
 
     m3u_content = "\n".join(m3u_lines) + "\n"
@@ -35,9 +54,9 @@ def main():
         f.write(m3u_content)
 
     with open("playlist.txt", "w", encoding="utf-8") as f:
-        f.write(STREAM_URL)
+        f.write(stream_url)
 
-    print("[SUCCESS] Files `playlist.m3u` and `playlist.txt` updated successfully.")
+    print("[SUCCESS] Files updated successfully via Streamlink!")
 
 if __name__ == "__main__":
     main()
