@@ -44,7 +44,6 @@ def parse_schedule(html):
                         "title": title
                     })
 
-    # Daily Fallback Schedule if the webpage schedule is empty/unreachable
     if not programs:
         print("[!] Empty webpage schedule. Applying Padang TV daily fallback schedule...")
         programs = [
@@ -68,13 +67,11 @@ def parse_schedule(html):
 def build_xmltv(base_programs):
     tv = ET.Element("tv", generator_info_name="PadangTV-EPG-Generator")
     
-    # Channel Header
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
     icon = ET.SubElement(channel, "icon", src=LOGO_URL)
 
-    # Generate schedules for TODAY and TOMORROW
     now = datetime.now()
     dates_to_generate = [now.date(), now.date() + timedelta(days=1)]
 
