@@ -1,6 +1,10 @@
-# 🎥 Padang TV IPTV Playlist Auto-Generator
+# 📺 Padang TV Auto-Generated M3U Playlist & EPG
 
-This repository automatically scrapes, parses, and refreshes dynamic HLS stream tokens for **Padang TV** directly from their official live streaming portal (`https://padangtv.id/livestreaming/`). The output is updated every 3 hours to guarantee active streaming without token expiration issues.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?logo=github)](https://sulthanpamenan.github.io/padang-tv-playlist/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status](https://img.shields.io/badge/Live%20TV-Active-blue)](#-key-features)
+
+An automated M3U playlist and EPG XMLTV generator for **Padang TV** live streaming. This repository uses a **Cloudflare Worker Resolver** alongside **GitHub Actions** to deliver seamless 24/7 stream playback on various IPTV players without token expiration issues.
 
 ---
 
@@ -8,17 +12,16 @@ This repository automatically scrapes, parses, and refreshes dynamic HLS stream 
 
 Use either of the links below to import into your IPTV player (TiviMate, OTT Navigator, VLC, etc.):
 
-* **M3U Playlist (GitHub Pages)**:
-  `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.m3u`
-
-* **Plain Text Playlist**:
-  `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.txt`
+| Content | URL | Description |
+| :--- | :--- | :--- |
+| **Playlist (TXT)** *(Recommended)* | `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.txt` | Direct live stream resolver URL |
+| **Playlist (M3U)** | `https://sulthanpamenan.github.io/padang-tv-playlist/playlist.m3u` | Standard M3U playlist format with logo and channel metadata |
 
 ---
 
 ## ⚡ Key Features
 
-* **Automated Token Refresh**: Runs every **3 hours** via GitHub Actions to capture fresh Usher HLS tokens before they expire.
+* **Real-Time Stream Resolver:** Powered by a Cloudflare Worker that dynamically fetches fresh stream tokens instantly upon playback.
 * **Official Schedule Sync**: Metadata linked to Padang TV's official program schedule (`https://padangtv.id/schedule/`).
 * **Fully Standardized**: Compatible with all M3U-supported IPTV players.
 * **VPN Free**: Streamable directly from local and international networks.
@@ -28,6 +31,12 @@ Use either of the links below to import into your IPTV player (TiviMate, OTT Nav
 ## ⚠️ Disclaimer
 
 This project is created for educational automation purposes only. All video streams belong to their respective copyright holders at Padang TV.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
