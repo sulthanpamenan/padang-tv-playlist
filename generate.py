@@ -1,32 +1,13 @@
 import sys
-import streamlink
 
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
-TWITCH_CHANNEL_URL = "https://www.twitch.tv/padang_tv"
 
-def get_stream_url():
-    try:
-        print("[*] Mengambil stream Padang TV via Streamlink...")
-        streams = streamlink.streams(TWITCH_CHANNEL_URL)
-        if "best" in streams:
-            url = streams["best"].url
-            print(f"[✓] Berhasil menemukan stream URL!")
-            return url
-        elif "worst" in streams:
-            return streams["worst"].url
-    except Exception as e:
-        print(f"[!] Error Streamlink: {e}")
-    return None
+WORKER_STREAM_URL = "https://padang-tv-proxy.sulthan-pamenan.workers.dev"
 
 def main():
-    stream_url = get_stream_url()
-
-    if not stream_url:
-        print("[X] Gagal mendapatkan stream M3U8 dari Twitch Padang TV.")
-        sys.exit(1)
-
     ua_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
     m3u_lines = [
         "<!--more-->",
         "<html>",
@@ -46,7 +27,7 @@ def main():
         f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV',
         f'#EXTVLCOPT:http-user-agent={ua_header}',
         f'#EXTVLCOPT:http-referrer=https://player.twitch.tv/',
-        f"{stream_url}"
+        f"{WORKER_STREAM_URL}"
     ]
 
     m3u_content = "\n".join(m3u_lines) + "\n"
@@ -55,9 +36,9 @@ def main():
         f.write(m3u_content)
 
     with open("playlist.txt", "w", encoding="utf-8") as f:
-        f.write(stream_url)
+        f.write(WORKER_STREAM_URL)
 
-    print("[SUCCESS] Berkas `playlist.m3u` dan `playlist.txt` berhasil diperbarui.")
+    print("[SUCCESS] Berkas `playlist.m3u` berhasil diperbarui menggunakan Cloudflare Resolver!")
 
 if __name__ == "__main__":
     main()
