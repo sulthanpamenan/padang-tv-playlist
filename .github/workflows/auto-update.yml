@@ -2,7 +2,7 @@ name: Auto Refresh Padang TV Stream & EPG
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests beautifulsoup4 streamlink
 
       - name: Generate M3U Playlist
         run: python generate.py
