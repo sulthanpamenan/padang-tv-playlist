@@ -1,10 +1,10 @@
-# 📺 Padang TV Auto-Generated M3U Playlist & EPG
+# 📺 Padang TV Auto-Generated M3U Playlist
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?logo=github)](https://sulthanpamenan.github.io/padang-tv-playlist/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/Live%20TV-Active-blue)](#-key-features)
 
-An automated M3U playlist and EPG XMLTV generator for **Padang TV** live streaming. This repository uses a **Cloudflare Worker Resolver** alongside **GitHub Actions** to deliver seamless 24/7 stream playback on various IPTV players without token expiration issues.
+An automated M3U playlist generator for **Padang TV** live streaming. This repository uses a **Cloudflare Worker Resolver** alongside **GitHub Actions** to deliver seamless 24/7 stream playback on various IPTV players without token expiration issues.
 
 ---
 
