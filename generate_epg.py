@@ -15,11 +15,12 @@ def fetch_schedule_html():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     }
     try:
+        print("[*] Fetching schedule page from Padang TV...")
         response = requests.get(SCHEDULE_URL, headers=headers, timeout=15)
         if response.status_code == 200:
             return response.text
     except Exception as e:
-        print(f"[!] Error saat memuat halaman jadwal: {e}")
+        print(f"[!] Error fetching schedule page: {e}")
     return ""
 
 def parse_schedule(html):
@@ -43,7 +44,9 @@ def parse_schedule(html):
                         "title": title
                     })
 
+    # Daily Fallback Schedule if the webpage schedule is empty/unreachable
     if not programs:
+        print("[!] Empty webpage schedule. Applying Padang TV daily fallback schedule...")
         programs = [
             {"time": "05:00", "title": "Salingka Minang Morning"},
             {"time": "06:00", "title": "Detak Sumbar Pagi"},
@@ -65,11 +68,13 @@ def parse_schedule(html):
 def build_xmltv(base_programs):
     tv = ET.Element("tv", generator_info_name="PadangTV-EPG-Generator")
     
+    # Channel Header
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
     icon = ET.SubElement(channel, "icon", src=LOGO_URL)
 
+    # Generate schedules for TODAY and TOMORROW
     now = datetime.now()
     dates_to_generate = [now.date(), now.date() + timedelta(days=1)]
 
@@ -94,10 +99,10 @@ def build_xmltv(base_programs):
                 title = ET.SubElement(programme, "title", lang="id")
                 title.text = prog["title"]
                 desc = ET.SubElement(programme, "desc", lang="id")
-                desc.text = f"Siaran resmi Padang TV - {prog['title']}"
+                desc.text = f"Padang TV Official Broadcast - {prog['title']}"
 
             except Exception as e:
-                print(f"[!] Error item EPG: {e}")
+                print(f"[!] Error processing EPG item: {e}")
 
     xml_str = minidom.parseString(ET.tostring(tv, encoding="utf-8")).toprettyxml(indent="  ")
     return xml_str
@@ -110,7 +115,7 @@ def main():
     with open("epg.xml", "w", encoding="utf-8") as f:
         f.write(xml_content)
         
-    print("[SUCCESS] Berkas EPG `epg.xml` berhasil diperbarui!")
+    print("[SUCCESS] EPG XML file `epg.xml` updated successfully!")
 
 if __name__ == "__main__":
     main()
