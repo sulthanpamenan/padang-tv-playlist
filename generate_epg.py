@@ -41,25 +41,91 @@ def parse_schedule(html):
                 if title:
                     programs.append({
                         "time": time_part,
-                        "title": title
+                        "title": title,
+                        "desc": f"Saksikan tayangan {title} secara langsung hanya di Padang TV.",
+                        "category": "General"
                     })
 
     if not programs:
-        print("[!] Empty webpage schedule. Applying Padang TV daily fallback schedule...")
+        print("[!] Empty webpage schedule. Applying Padang TV professional fallback schedule...")
         programs = [
-            {"time": "05:00", "title": "Salingka Minang Morning"},
-            {"time": "06:00", "title": "Detak Sumbar Pagi"},
-            {"time": "07:30", "title": "Lagu Minang Hits"},
-            {"time": "09:00", "title": "Dapur Kita"},
-            {"time": "11:00", "title": "Info Publik"},
-            {"time": "12:00", "title": "Detak Sumbar Siang"},
-            {"time": "13:30", "title": "Feature Daerah"},
-            {"time": "15:30", "title": "Salingka Minang Sore"},
-            {"time": "17:00", "title": "Mimbar Agama"},
-            {"time": "19:00", "title": "Detak Sumbar Utama"},
-            {"time": "20:30", "title": "Talkshow Interaktif"},
-            {"time": "22:00", "title": "Sinema / Salingka Minang Malam"},
-            {"time": "00:00", "title": "Padang TV Night Broadcast"}
+            {
+                "time": "05:00",
+                "title": "Salingka Minang Morning",
+                "desc": "Program musik dan sajian kebudayaan khas Minangkabau untuk menyapa pagi Anda dengan alunan lagu daerah populer.",
+                "category": "Music / Culture"
+            },
+            {
+                "time": "06:00",
+                "title": "Detak Sumbar Pagi",
+                "desc": "Sajian berita terkini, hangat, dan terpercaya seputar Sumatera Barat, peristiwa lokal, sosial, dan ekonomi pagi ini.",
+                "category": "News"
+            },
+            {
+                "time": "07:30",
+                "title": "Lagu Minang Hits",
+                "desc": "Kumpulan video musik Minang terbaik dan terpopuler dari para penyanyi legendaris hingga seniman muda Sumatera Barat.",
+                "category": "Music"
+            },
+            {
+                "time": "09:00",
+                "title": "Dapur Kita",
+                "desc": "Acara kuliner khas Minang dan nusantara. Mengulas resep masakan tradisional, tips memasak, dan wisata kuliner terfavorit.",
+                "category": "Lifestyle / Cooking"
+            },
+            {
+                "time": "11:00",
+                "title": "Info Publik",
+                "desc": "Informasi seputar pelayanan publik, kebijakan pemerintah daerah Sumatera Barat, dan sosialisasi program kemasyarakatan.",
+                "category": "Documentary / Information"
+            },
+            {
+                "time": "12:00",
+                "title": "Detak Sumbar Siang",
+                "desc": "Rangkuman berita terkini tengah hari mengenai peristiwa penting, politik, dan kabar daerah terupdate dari seluruh wilayah Sumbar.",
+                "category": "News"
+            },
+            {
+                "time": "13:30",
+                "title": "Feature Daerah",
+                "desc": "Program dokumenter lokal yang mengangkat potensi keindahan alam, kearifan lokal, pariwisata, dan potensi UMKM Sumatera Barat.",
+                "category": "Documentary"
+            },
+            {
+                "time": "15:30",
+                "title": "Salingka Minang Sore",
+                "desc": "Menemani sore Anda dengan sajian hiburan, seni pertunjukan tradisional Minangkabau, dan lagu-lagu daerah pilihan.",
+                "category": "Culture / Entertainment"
+            },
+            {
+                "time": "17:00", "title": "Mimbar Agama",
+                "desc": "Siar keagamaan Islam, ceramah spiritual, dan kajian fikih sehari-hari menjelang waktu ibadah maghrib.",
+                "category": "Religion"
+            },
+            {
+                "time": "19:00",
+                "title": "Detak Sumbar Utama",
+                "desc": "Program berita utama malam hari yang menyajikan laporan mendalam, investigasi, dan rangkuman peristiwa terbesar hari ini di Sumbar.",
+                "category": "News"
+            },
+            {
+                "time": "20:30",
+                "title": "Talkshow Interaktif",
+                "desc": "Diskusi publik bersama tokoh daerah, pengamat, dan pejabat publik mengulas isu-isu hangat terkini di Sumatera Barat.",
+                "category": "Talk Show"
+            },
+            {
+                "time": "22:00",
+                "title": "Sinema / Salingka Minang Malam",
+                "desc": "Tayangan hiburan malam yang menghadirkan pertunjukan seni drama, komedi Minang, dan deretan lagu nostalgia pilihan.",
+                "category": "Movie / Variety"
+            },
+            {
+                "time": "00:00",
+                "title": "Padang TV Night Broadcast",
+                "desc": "Rangkaian siaran ulang program-program unggulan Padang TV untuk menemani waktu istirahat malam Anda.",
+                "category": "Entertainment"
+            }
         ]
 
     return programs
@@ -73,7 +139,7 @@ def build_xmltv(base_programs):
     icon = ET.SubElement(channel, "icon", src=LOGO_URL)
 
     now = datetime.now()
-    dates_to_generate = [now.date(), now.date() + timedelta(days=1)]
+    dates_to_generate = [now.date() + timedelta(days=i) for i in range(3)]
 
     for current_date in dates_to_generate:
         for i, prog in enumerate(base_programs):
@@ -93,10 +159,17 @@ def build_xmltv(base_programs):
                 stop_str = stop_dt.strftime("%Y%m%d%H%M%S +0700")
 
                 programme = ET.SubElement(tv, "programme", start=start_str, stop=stop_str, channel=CHANNEL_ID)
+                
                 title = ET.SubElement(programme, "title", lang="id")
                 title.text = prog["title"]
+                
                 desc = ET.SubElement(programme, "desc", lang="id")
-                desc.text = f"Padang TV Official Broadcast - {prog['title']}"
+                desc.text = prog.get("desc", f"Saksikan {prog['title']} hanya di Padang TV.")
+                
+                category = ET.SubElement(programme, "category", lang="en")
+                category.text = prog.get("category", "General")
+
+                ET.SubElement(programme, "icon", src=LOGO_URL)
 
             except Exception as e:
                 print(f"[!] Error processing EPG item: {e}")
@@ -112,7 +185,7 @@ def main():
     with open("epg.xml", "w", encoding="utf-8") as f:
         f.write(xml_content)
         
-    print("[SUCCESS] EPG XML file `epg.xml` updated successfully!")
+    print("[SUCCESS] Professional EPG XML file `epg.xml` updated successfully!")
 
 if __name__ == "__main__":
     main()
