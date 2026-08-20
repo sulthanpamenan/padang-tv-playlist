@@ -1,11 +1,66 @@
 import sys
+import os
+from playwright.sync_api import sync_playwright
 
+TARGET_URL = "https://padangtv.id/livestreaming/"
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
 
-WORKER_STREAM_URL = "https://padang-tv-proxy.sulthan-pamenan.workers.dev"
+def run_scraper():
+    ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+    stream_url = None
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-setuid-sandbox", "--autoplay-policy=no-user-gesture-required"]
+        )
+        context = browser.new_context(user_agent=ua)
+        page = context.new_page()
+
+        def handle_request(request):
+            nonlocal stream_url
+            req_url = request.url
+            if ".m3u8" in req_url and not stream_url:
+                print(f"[✓] Stream m3u8 ditemukan: {req_url}")
+                stream_url = req_url
+
+        page.on("request", handle_request)
+
+        print("[*] Membuka halaman Padang TV Live Streaming...")
+        try:
+            page.goto(TARGET_URL, timeout=60000, wait_until="domcontentloaded")
+            page.wait_for_timeout(3000)
+
+            for frame in page.frames:
+                try:
+                    play_btn = frame.locator("video, .play-button, iframe, #player")
+                    if play_btn.count() > 0:
+                        play_btn.first.click(timeout=1000)
+                except Exception:
+                    pass
+
+            for _ in range(8):
+                if stream_url:
+                    break
+                page.wait_for_timeout(1000)
+
+        except Exception as e:
+            print(f"[!] Error saat memuat halaman: {e}")
+
+        browser.close()
+
+    return stream_url
 
 def main():
+    stream_url = run_scraper()
+
+    if not stream_url:
+        print("[X] Gagal menangkap stream M3U8 dari Padang TV.")
+        sys.exit(1)
+
+    print(f"[✓] Stream M3U8 Berhasil Ditemukan!")
+
     ua_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 
     m3u_lines = [
@@ -26,8 +81,8 @@ def main():
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV',
         f'#EXTVLCOPT:http-user-agent={ua_header}',
-        f'#EXTVLCOPT:http-referrer=https://player.twitch.tv/',
-        f"{WORKER_STREAM_URL}"
+        f'#EXTVLCOPT:http-referrer=https://padangtv.id/',
+        f"{stream_url}"
     ]
 
     m3u_content = "\n".join(m3u_lines) + "\n"
@@ -36,9 +91,9 @@ def main():
         f.write(m3u_content)
 
     with open("playlist.txt", "w", encoding="utf-8") as f:
-        f.write(WORKER_STREAM_URL)
+        f.write(stream_url)
 
-    print("[SUCCESS] Berkas `playlist.m3u` berhasil diperbarui menggunakan Cloudflare Resolver!")
+    print("[SUCCESS] Berkas `playlist.m3u` dan `playlist.txt` berhasil diperbarui.")
 
 if __name__ == "__main__":
     main()
