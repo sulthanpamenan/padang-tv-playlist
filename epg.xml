@@ -2,6 +2,7 @@
 <tv generator_info_name="PadangTV-EPG-Generator">
   <channel id="PadangTV.id">
     <display-name>Padang TV</display-name>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
   </channel>
   <programme start="20260820050000 +0700" stop="20260820060000 +0700" channel="PadangTV.id">
     <title lang="id">Salingka Minang Morning</title>
@@ -48,7 +49,63 @@
     <desc lang="id">Siaran resmi Padang TV - Talkshow Interaktif</desc>
   </programme>
   <programme start="20260820220000 +0700" stop="20260821000000 +0700" channel="PadangTV.id">
-    <title lang="id">Semaian Rohani / Sinema Malam</title>
-    <desc lang="id">Siaran resmi Padang TV - Semaian Rohani / Sinema Malam</desc>
+    <title lang="id">Sinema / Salingka Minang Malam</title>
+    <desc lang="id">Siaran resmi Padang TV - Sinema / Salingka Minang Malam</desc>
+  </programme>
+  <programme start="20260820000000 +0700" stop="20260820030000 +0700" channel="PadangTV.id">
+    <title lang="id">Padang TV Night Broadcast</title>
+    <desc lang="id">Siaran resmi Padang TV - Padang TV Night Broadcast</desc>
+  </programme>
+  <programme start="20260821050000 +0700" stop="20260821060000 +0700" channel="PadangTV.id">
+    <title lang="id">Salingka Minang Morning</title>
+    <desc lang="id">Siaran resmi Padang TV - Salingka Minang Morning</desc>
+  </programme>
+  <programme start="20260821060000 +0700" stop="20260821073000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Pagi</title>
+    <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Pagi</desc>
+  </programme>
+  <programme start="20260821073000 +0700" stop="20260821090000 +0700" channel="PadangTV.id">
+    <title lang="id">Lagu Minang Hits</title>
+    <desc lang="id">Siaran resmi Padang TV - Lagu Minang Hits</desc>
+  </programme>
+  <programme start="20260821090000 +0700" stop="20260821110000 +0700" channel="PadangTV.id">
+    <title lang="id">Dapur Kita</title>
+    <desc lang="id">Siaran resmi Padang TV - Dapur Kita</desc>
+  </programme>
+  <programme start="20260821110000 +0700" stop="20260821120000 +0700" channel="PadangTV.id">
+    <title lang="id">Info Publik</title>
+    <desc lang="id">Siaran resmi Padang TV - Info Publik</desc>
+  </programme>
+  <programme start="20260821120000 +0700" stop="20260821133000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Siang</title>
+    <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Siang</desc>
+  </programme>
+  <programme start="20260821133000 +0700" stop="20260821153000 +0700" channel="PadangTV.id">
+    <title lang="id">Feature Daerah</title>
+    <desc lang="id">Siaran resmi Padang TV - Feature Daerah</desc>
+  </programme>
+  <programme start="20260821153000 +0700" stop="20260821170000 +0700" channel="PadangTV.id">
+    <title lang="id">Salingka Minang Sore</title>
+    <desc lang="id">Siaran resmi Padang TV - Salingka Minang Sore</desc>
+  </programme>
+  <programme start="20260821170000 +0700" stop="20260821190000 +0700" channel="PadangTV.id">
+    <title lang="id">Mimbar Agama</title>
+    <desc lang="id">Siaran resmi Padang TV - Mimbar Agama</desc>
+  </programme>
+  <programme start="20260821190000 +0700" stop="20260821203000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Utama</title>
+    <desc lang="id">Siaran resmi Padang TV - Detak Sumbar Utama</desc>
+  </programme>
+  <programme start="20260821203000 +0700" stop="20260821220000 +0700" channel="PadangTV.id">
+    <title lang="id">Talkshow Interaktif</title>
+    <desc lang="id">Siaran resmi Padang TV - Talkshow Interaktif</desc>
+  </programme>
+  <programme start="20260821220000 +0700" stop="20260822000000 +0700" channel="PadangTV.id">
+    <title lang="id">Sinema / Salingka Minang Malam</title>
+    <desc lang="id">Siaran resmi Padang TV - Sinema / Salingka Minang Malam</desc>
+  </programme>
+  <programme start="20260821000000 +0700" stop="20260821030000 +0700" channel="PadangTV.id">
+    <title lang="id">Padang TV Night Broadcast</title>
+    <desc lang="id">Siaran resmi Padang TV - Padang TV Night Broadcast</desc>
   </programme>
 </tv>
