@@ -43,9 +43,10 @@ def main():
         "",
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV',
-        f'#EXTVLCOPT:http-user-agent={ua_header}',
-        f'#EXTVLCOPT:http-referrer=https://player.twitch.tv/',
-        f"{stream_url}"
+        f'#KODIPROP:inputstreamaddon=inputstream.adaptive',
+        f'#KODIPROP:inputstream.adaptive.manifest_type=hls',
+        f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={ua_header}&Referer=https://player.twitch.tv/',
+        f"{stream_url}|User-Agent={ua_header}&Referer=https://player.twitch.tv/"
     ]
 
     m3u_content = "\n".join(m3u_lines) + "\n"
