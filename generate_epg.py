@@ -15,7 +15,6 @@ def fetch_schedule_html():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     }
     try:
-        print("[*] Membuka halaman jadwal Padang TV...")
         response = requests.get(SCHEDULE_URL, headers=headers, timeout=15)
         if response.status_code == 200:
             return response.text
@@ -45,7 +44,6 @@ def parse_schedule(html):
                     })
 
     if not programs:
-        print("[!] Web jadwal kosong, menerapkan jadwal Fallback Harian Padang TV...")
         programs = [
             {"time": "05:00", "title": "Salingka Minang Morning"},
             {"time": "06:00", "title": "Detak Sumbar Pagi"},
@@ -66,10 +64,12 @@ def parse_schedule(html):
 
 def build_xmltv(base_programs):
     tv = ET.Element("tv", generator_info_name="PadangTV-EPG-Generator")
+    
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
     icon = ET.SubElement(channel, "icon", src=LOGO_URL)
+
     now = datetime.now()
     dates_to_generate = [now.date(), now.date() + timedelta(days=1)]
 
@@ -78,6 +78,7 @@ def build_xmltv(base_programs):
             try:
                 time_struct = datetime.strptime(prog["time"], "%H:%M").time()
                 start_dt = datetime.combine(current_date, time_struct)
+                
                 if i + 1 < len(base_programs):
                     next_time_struct = datetime.strptime(base_programs[i+1]["time"], "%H:%M").time()
                     stop_dt = datetime.combine(current_date, next_time_struct)
@@ -88,6 +89,7 @@ def build_xmltv(base_programs):
 
                 start_str = start_dt.strftime("%Y%m%d%H%M%S +0700")
                 stop_str = stop_dt.strftime("%Y%m%d%H%M%S +0700")
+
                 programme = ET.SubElement(tv, "programme", start=start_str, stop=stop_str, channel=CHANNEL_ID)
                 title = ET.SubElement(programme, "title", lang="id")
                 title.text = prog["title"]
@@ -103,13 +105,12 @@ def build_xmltv(base_programs):
 def main():
     html = fetch_schedule_html()
     programs = parse_schedule(html)
-    
     xml_content = build_xmltv(programs)
     
     with open("epg.xml", "w", encoding="utf-8") as f:
         f.write(xml_content)
         
-    print("[SUCCESS] Berkas EPG `epg.xml` berhasil diperbarui dan diselaraskan!")
+    print("[SUCCESS] Berkas EPG `epg.xml` berhasil diperbarui!")
 
 if __name__ == "__main__":
     main()
