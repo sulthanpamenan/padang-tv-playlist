@@ -2,7 +2,7 @@ import sys
 
 EPG_URL = "https://sulthanpamenan.github.io/padang-tv-playlist/epg.xml"
 LOGO_URL = "https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"
-WORKER_STREAM_URL = "https://padang-tv-proxy.sulthan-pamenan.workers.dev"
+STREAM_URL = "https://m3u8.live/twitch/padang_tv.m3u8"
 
 def main():
     ua_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
@@ -26,16 +26,16 @@ def main():
         f'#EXTINF:-1 tvg-id="PadangTV.id" tvg-name="Padang TV" tvg-logo="{LOGO_URL}" group-title="Local",Padang TV',
         f'#EXTVLCOPT:http-user-agent={ua_header}',
         f'#EXTVLCOPT:http-referrer=https://player.twitch.tv/',
-        f"{WORKER_STREAM_URL}"
+        f"{STREAM_URL}"
     ]
 
     m3u_content = "\n".join(m3u_lines) + "\n"
 
-    with open("padang-tv.m3u", "w", encoding="utf-8") as f:
+    with open("playlist.m3u", "w", encoding="utf-8") as f:
         f.write(m3u_content)
 
-    with open("padang-tv.txt", "w", encoding="utf-8") as f:
-        f.write(WORKER_STREAM_URL)
+    with open("playlist.txt", "w", encoding="utf-8") as f:
+        f.write(STREAM_URL)
 
     print("[SUCCESS] Files `playlist.m3u` and `playlist.txt` updated successfully.")
 
