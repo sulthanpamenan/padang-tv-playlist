@@ -4,84 +4,6 @@
     <display-name>Padang TV</display-name>
     <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
   </channel>
-  <programme start="20260822050000 +0700" stop="20260822060000 +0700" channel="PadangTV.id">
-    <title lang="id">Salingka Minang Morning</title>
-    <desc lang="id">Program musik dan sajian kebudayaan khas Minangkabau untuk menyapa pagi Anda dengan alunan lagu daerah populer.</desc>
-    <category lang="en">Music / Culture</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822060000 +0700" stop="20260822073000 +0700" channel="PadangTV.id">
-    <title lang="id">Detak Sumbar Pagi</title>
-    <desc lang="id">Sajian berita terkini, hangat, dan terpercaya seputar Sumatera Barat, peristiwa lokal, sosial, dan ekonomi pagi ini.</desc>
-    <category lang="en">News</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822073000 +0700" stop="20260822090000 +0700" channel="PadangTV.id">
-    <title lang="id">Lagu Minang Hits</title>
-    <desc lang="id">Kumpulan video musik Minang terbaik dan terpopuler dari para penyanyi legendaris hingga seniman muda Sumatera Barat.</desc>
-    <category lang="en">Music</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822090000 +0700" stop="20260822110000 +0700" channel="PadangTV.id">
-    <title lang="id">Dapur Kita</title>
-    <desc lang="id">Acara kuliner khas Minang dan nusantara. Mengulas resep masakan tradisional, tips memasak, dan wisata kuliner terfavorit.</desc>
-    <category lang="en">Lifestyle / Cooking</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822110000 +0700" stop="20260822120000 +0700" channel="PadangTV.id">
-    <title lang="id">Info Publik</title>
-    <desc lang="id">Informasi seputar pelayanan publik, kebijakan pemerintah daerah Sumatera Barat, dan sosialisasi program kemasyarakatan.</desc>
-    <category lang="en">Documentary / Information</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822120000 +0700" stop="20260822133000 +0700" channel="PadangTV.id">
-    <title lang="id">Detak Sumbar Siang</title>
-    <desc lang="id">Rangkuman berita terkini tengah hari mengenai peristiwa penting, politik, dan kabar daerah terupdate dari seluruh wilayah Sumbar.</desc>
-    <category lang="en">News</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822133000 +0700" stop="20260822153000 +0700" channel="PadangTV.id">
-    <title lang="id">Feature Daerah</title>
-    <desc lang="id">Program dokumenter lokal yang mengangkat potensi keindahan alam, kearifan lokal, pariwisata, dan potensi UMKM Sumatera Barat.</desc>
-    <category lang="en">Documentary</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822153000 +0700" stop="20260822170000 +0700" channel="PadangTV.id">
-    <title lang="id">Salingka Minang Sore</title>
-    <desc lang="id">Menemani sore Anda dengan sajian hiburan, seni pertunjukan tradisional Minangkabau, dan lagu-lagu daerah pilihan.</desc>
-    <category lang="en">Culture / Entertainment</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822170000 +0700" stop="20260822190000 +0700" channel="PadangTV.id">
-    <title lang="id">Mimbar Agama</title>
-    <desc lang="id">Siar keagamaan Islam, ceramah spiritual, dan kajian fikih sehari-hari menjelang waktu ibadah maghrib.</desc>
-    <category lang="en">Religion</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822190000 +0700" stop="20260822203000 +0700" channel="PadangTV.id">
-    <title lang="id">Detak Sumbar Utama</title>
-    <desc lang="id">Program berita utama malam hari yang menyajikan laporan mendalam, investigasi, dan rangkuman peristiwa terbesar hari ini di Sumbar.</desc>
-    <category lang="en">News</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822203000 +0700" stop="20260822220000 +0700" channel="PadangTV.id">
-    <title lang="id">Talkshow Interaktif</title>
-    <desc lang="id">Diskusi publik bersama tokoh daerah, pengamat, dan pejabat publik mengulas isu-isu hangat terkini di Sumatera Barat.</desc>
-    <category lang="en">Talk Show</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822220000 +0700" stop="20260823000000 +0700" channel="PadangTV.id">
-    <title lang="id">Sinema / Salingka Minang Malam</title>
-    <desc lang="id">Tayangan hiburan malam yang menghadirkan pertunjukan seni drama, komedi Minang, dan deretan lagu nostalgia pilihan.</desc>
-    <category lang="en">Movie / Variety</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
-  <programme start="20260822000000 +0700" stop="20260822030000 +0700" channel="PadangTV.id">
-    <title lang="id">Padang TV Night Broadcast</title>
-    <desc lang="id">Rangkaian siaran ulang program-program unggulan Padang TV untuk menemani waktu istirahat malam Anda.</desc>
-    <category lang="en">Entertainment</category>
-    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
-  </programme>
   <programme start="20260823050000 +0700" stop="20260823060000 +0700" channel="PadangTV.id">
     <title lang="id">Salingka Minang Morning</title>
     <desc lang="id">Program musik dan sajian kebudayaan khas Minangkabau untuk menyapa pagi Anda dengan alunan lagu daerah populer.</desc>
@@ -233,6 +155,84 @@
     <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
   </programme>
   <programme start="20260824000000 +0700" stop="20260824030000 +0700" channel="PadangTV.id">
+    <title lang="id">Padang TV Night Broadcast</title>
+    <desc lang="id">Rangkaian siaran ulang program-program unggulan Padang TV untuk menemani waktu istirahat malam Anda.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825050000 +0700" stop="20260825060000 +0700" channel="PadangTV.id">
+    <title lang="id">Salingka Minang Morning</title>
+    <desc lang="id">Program musik dan sajian kebudayaan khas Minangkabau untuk menyapa pagi Anda dengan alunan lagu daerah populer.</desc>
+    <category lang="en">Music / Culture</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825060000 +0700" stop="20260825073000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Pagi</title>
+    <desc lang="id">Sajian berita terkini, hangat, dan terpercaya seputar Sumatera Barat, peristiwa lokal, sosial, dan ekonomi pagi ini.</desc>
+    <category lang="en">News</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825073000 +0700" stop="20260825090000 +0700" channel="PadangTV.id">
+    <title lang="id">Lagu Minang Hits</title>
+    <desc lang="id">Kumpulan video musik Minang terbaik dan terpopuler dari para penyanyi legendaris hingga seniman muda Sumatera Barat.</desc>
+    <category lang="en">Music</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825090000 +0700" stop="20260825110000 +0700" channel="PadangTV.id">
+    <title lang="id">Dapur Kita</title>
+    <desc lang="id">Acara kuliner khas Minang dan nusantara. Mengulas resep masakan tradisional, tips memasak, dan wisata kuliner terfavorit.</desc>
+    <category lang="en">Lifestyle / Cooking</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825110000 +0700" stop="20260825120000 +0700" channel="PadangTV.id">
+    <title lang="id">Info Publik</title>
+    <desc lang="id">Informasi seputar pelayanan publik, kebijakan pemerintah daerah Sumatera Barat, dan sosialisasi program kemasyarakatan.</desc>
+    <category lang="en">Documentary / Information</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825120000 +0700" stop="20260825133000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Siang</title>
+    <desc lang="id">Rangkuman berita terkini tengah hari mengenai peristiwa penting, politik, dan kabar daerah terupdate dari seluruh wilayah Sumbar.</desc>
+    <category lang="en">News</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825133000 +0700" stop="20260825153000 +0700" channel="PadangTV.id">
+    <title lang="id">Feature Daerah</title>
+    <desc lang="id">Program dokumenter lokal yang mengangkat potensi keindahan alam, kearifan lokal, pariwisata, dan potensi UMKM Sumatera Barat.</desc>
+    <category lang="en">Documentary</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825153000 +0700" stop="20260825170000 +0700" channel="PadangTV.id">
+    <title lang="id">Salingka Minang Sore</title>
+    <desc lang="id">Menemani sore Anda dengan sajian hiburan, seni pertunjukan tradisional Minangkabau, dan lagu-lagu daerah pilihan.</desc>
+    <category lang="en">Culture / Entertainment</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825170000 +0700" stop="20260825190000 +0700" channel="PadangTV.id">
+    <title lang="id">Mimbar Agama</title>
+    <desc lang="id">Siar keagamaan Islam, ceramah spiritual, dan kajian fikih sehari-hari menjelang waktu ibadah maghrib.</desc>
+    <category lang="en">Religion</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825190000 +0700" stop="20260825203000 +0700" channel="PadangTV.id">
+    <title lang="id">Detak Sumbar Utama</title>
+    <desc lang="id">Program berita utama malam hari yang menyajikan laporan mendalam, investigasi, dan rangkuman peristiwa terbesar hari ini di Sumbar.</desc>
+    <category lang="en">News</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825203000 +0700" stop="20260825220000 +0700" channel="PadangTV.id">
+    <title lang="id">Talkshow Interaktif</title>
+    <desc lang="id">Diskusi publik bersama tokoh daerah, pengamat, dan pejabat publik mengulas isu-isu hangat terkini di Sumatera Barat.</desc>
+    <category lang="en">Talk Show</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825220000 +0700" stop="20260826000000 +0700" channel="PadangTV.id">
+    <title lang="id">Sinema / Salingka Minang Malam</title>
+    <desc lang="id">Tayangan hiburan malam yang menghadirkan pertunjukan seni drama, komedi Minang, dan deretan lagu nostalgia pilihan.</desc>
+    <category lang="en">Movie / Variety</category>
+    <icon src="https://padangtv.id/wp-content/uploads/2020/07/logo1-e1595189708614.png"/>
+  </programme>
+  <programme start="20260825000000 +0700" stop="20260825030000 +0700" channel="PadangTV.id">
     <title lang="id">Padang TV Night Broadcast</title>
     <desc lang="id">Rangkaian siaran ulang program-program unggulan Padang TV untuk menemani waktu istirahat malam Anda.</desc>
     <category lang="en">Entertainment</category>
