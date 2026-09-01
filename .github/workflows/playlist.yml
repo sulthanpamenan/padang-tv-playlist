@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests streamlink
+          pip install streamlink
 
       - name: Generate M3U Playlist
         run: python generate_playlist.py
