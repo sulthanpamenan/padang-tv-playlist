@@ -1,5 +1,7 @@
 # 📺 Padang TV Auto-Generated M3U Playlist & EPG
 
+[![Auto Update Playlist](https://github.com/sulthanpamenan/padang-tv-playlist/actions/workflows/playlist.yml/badge.svg)](https://github.com/sulthanpamenan/padang-tv-playlist/actions/workflows/playlist.yml)
+[![Auto Update EPG](https://github.com/sulthanpamenan/padang-tv-playlist/actions/workflows/epg.yml/badge.svg)](https://github.com/sulthanpamenan/padang-tv-playlist/actions/workflows/epg.yml)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?logo=github)](https://sulthanpamenan.github.io/padang-tv-playlist/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/Live%20TV-Active-blue)](#-key-features)
