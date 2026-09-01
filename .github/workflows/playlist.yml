@@ -25,7 +25,7 @@ jobs:
           pip install requests streamlink
 
       - name: Generate M3U Playlist
-        run: python generate.py
+        run: python generate_playlist.py
 
       - name: Commit and Push Stream Changes
         run: |
