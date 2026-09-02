@@ -1,4 +1,4 @@
-name: Auto Refresh Padang TV Stream
+name: Update Padang TV Stream
 
 on:
   schedule:
