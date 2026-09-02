@@ -1,4 +1,4 @@
-name: Auto Refresh Padang TV EPG
+name: Generate EPG XMLTV
 
 on:
   schedule:
