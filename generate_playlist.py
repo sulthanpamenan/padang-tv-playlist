@@ -22,7 +22,7 @@ def main():
 
     if not stream_url:
         print("[X] Failed to fetch stream URL.")
-        sys.exit(1)
+        sys.exit(0)
 
     ua_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
 
