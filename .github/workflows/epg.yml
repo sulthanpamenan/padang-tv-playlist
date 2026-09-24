@@ -1,8 +1,8 @@
 name: EPG XMLTV
 
 on:
-  schedule:
-    - cron: '30 5,17 * * *'
+  repository_dispatch:
+    types: [run-epg]
   workflow_dispatch:
 
 jobs:
