@@ -1,8 +1,8 @@
 name: Padang TV Stream
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
+  repository_dispatch:
+    types: [run-playlist]
   workflow_dispatch:
 
 jobs:
