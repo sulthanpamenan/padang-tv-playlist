@@ -1,5 +1,9 @@
 name: EPG XMLTV
 
+concurrency:
+  group: padang-tv-deploy
+  cancel-in-progress: false
+
 on:
   repository_dispatch:
     types: [run-epg]
